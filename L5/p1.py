@@ -1,0 +1,22 @@
+import pandas as pd 
+import numpy as np 
+from sklearn.impute import SimpleImputer
+data = pd.read_csv("data2023.csv")
+print (data)
+print()
+s1 = SimpleImputer(missing_values=np.nan, strategy="mean")
+data["Salary"] = s1.fit_transform(data[["Salary"]])
+print (data)
+print()
+s2 = SimpleImputer (missing_values=np.nan, strategy="constant", fill_value=21)
+data["Age"] = s2.fit_transform(data[["Age"]])
+print (data)
+print()
+s3 = SimpleImputer (missing_values=np.nan, strategy="most_frequent")
+data["Position"] = s3.fit_transform(data[["Position"]])
+print (data)
+print()
+s4 = SimpleImputer (missing_values=np.nan, strategy="median")
+data["Experience"] = s4.fit_transform(data[["Experience"]])
+print (data)
+print()

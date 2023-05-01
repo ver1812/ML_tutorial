@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flask App</title>
+</head>
+<body>
+	<h1>Flask App</h1>
+	<form action="/" method="get">
+		<label for="num">Enter a number:</label><br>
+		<input type="text" id="num" name="num"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+	{% if m %}
+	<p>{{ m }}</p>
+	{% endif %}
+</body>
+</html>
